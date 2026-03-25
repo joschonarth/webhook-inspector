@@ -14,6 +14,7 @@ export function WebhooksList() {
   const [generatedHandlerCode, setGeneratedHandlerCode] = useState<
     string | null
   >(null)
+  const [isGenerating, setIsGenerating] = useState(false)
 
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
     useSuspenseInfiniteQuery({
@@ -78,19 +79,24 @@ export function WebhooksList() {
   }
 
   async function handleGenerateHandler() {
-    const response = await fetch('http://localhost:3333/api/generate', {
-      method: 'POST',
-      body: JSON.stringify({ webhookIds: checkedWebhooksIds }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    setIsGenerating(true)
 
-    type GenerateResponse = { code: string }
+    try {
+      const response = await fetch('http://localhost:3333/api/generate', {
+        method: 'POST',
+        body: JSON.stringify({ webhookIds: checkedWebhooksIds }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
 
-    const data: GenerateResponse = await response.json()
+      type GenerateResponse = { code: string }
+      const data: GenerateResponse = await response.json()
 
-    setGeneratedHandlerCode(data.code)
+      setGeneratedHandlerCode(data.code)
+    } finally {
+      setIsGenerating(false)
+    }
   }
 
   const hasAnyWebhookChecked = checkedWebhooksIds.length > 0
@@ -100,13 +106,17 @@ export function WebhooksList() {
       <div className="flex-1 overflow-y-auto">
         <div className="space-y-1 p-2">
           <button
-            type="submit"
-            disabled={!hasAnyWebhookChecked}
+            type="button"
+            disabled={!hasAnyWebhookChecked || isGenerating}
             className="bg-indigo-400 mb-3 text-white w-full rounded-lg flex items-center justify-center gap-3 font-medium text-sm py-2 disabled:opacity-50"
-            onClick={() => handleGenerateHandler()}
+            onClick={handleGenerateHandler}
           >
-            <Wand2 className="size-4" />
-            Gerar handler
+            {isGenerating ? (
+              <Loader2 className="size-4 animate-spin" />
+            ) : (
+              <Wand2 className="size-4" />
+            )}
+            {isGenerating ? 'Generating...' : 'Generate handler'}
           </button>
 
           {webhooks.map((webhook) => {
