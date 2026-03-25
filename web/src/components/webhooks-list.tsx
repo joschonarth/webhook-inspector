@@ -1,10 +1,9 @@
-import * as Dialog from '@radix-ui/react-dialog'
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query'
-import { Loader2, Wand2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { webhookListSchema } from '../http/schemas/webhooks'
+import { GenerateHandlerButton } from './generate-handler-button'
 import { GeneratedHandlerDialog } from './generated-handler-dialog'
-import { CodeBlock } from './ui/code-block'
 import { WebhooksListItem } from './webhooks-list-item'
 
 export function WebhooksList() {
@@ -106,19 +105,11 @@ export function WebhooksList() {
     <>
       <div className="flex-1 overflow-y-auto">
         <div className="space-y-1 p-2">
-          <button
-            type="button"
-            disabled={!hasAnyWebhookChecked || isGenerating}
-            className="bg-indigo-400 mb-3 text-white w-full rounded-lg flex items-center justify-center gap-3 font-medium text-sm py-2 disabled:opacity-50"
+          <GenerateHandlerButton
+            disabled={!hasAnyWebhookChecked}
+            isGenerating={isGenerating}
             onClick={handleGenerateHandler}
-          >
-            {isGenerating ? (
-              <Loader2 className="size-4 animate-spin" />
-            ) : (
-              <Wand2 className="size-4" />
-            )}
-            {isGenerating ? 'Generating...' : 'Generate handler'}
-          </button>
+          />
 
           {webhooks.map((webhook) => {
             return (
