@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+import { ClockIcon } from 'lucide-react'
 import { Badge } from './ui/badge'
 
 interface WebhookDetailHeaderProps {
@@ -26,9 +28,9 @@ export function WebhookDetailHeader({
           <span className="font-mono underline underline-offset-4">{ip}</span>
         </div>
         <span className="w-px h-4 bg-zinc-700" />
-        <div className="flex items-center gap-1 text-sm text-zinc-400">
-          <span>at</span>
-          <span>{createdAt.toLocaleString('en-US')}</span>
+        <div className="flex items-center gap-1.5 text-sm text-zinc-400">
+          <ClockIcon className="size-3.5" />
+          <span>{format(createdAt, "MMM d, yyyy 'at' HH:mm:ss")}</span>
         </div>
       </div>
     </div>
