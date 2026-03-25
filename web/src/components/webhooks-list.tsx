@@ -3,6 +3,7 @@ import { useSuspenseInfiniteQuery } from '@tanstack/react-query'
 import { Loader2, Wand2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { webhookListSchema } from '../http/schemas/webhooks'
+import { GeneratedHandlerDialog } from './generated-handler-dialog'
 import { CodeBlock } from './ui/code-block'
 import { WebhooksListItem } from './webhooks-list-item'
 
@@ -143,15 +144,10 @@ export function WebhooksList() {
       </div>
 
       {!!generatedHandlerCode && (
-        <Dialog.Root defaultOpen>
-          <Dialog.Overlay className="bg-black/60 inset-0 fixed z-20" />
-
-          <Dialog.Content className="flex items-center justify-center fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 z-40">
-            <div className="bg-zinc-900 w-[600px] p-4 rounded-lg border border-zinc-800 max-h-[620px] overflow-y-auto">
-              <CodeBlock language="typescript" code={generatedHandlerCode} />
-            </div>
-          </Dialog.Content>
-        </Dialog.Root>
+        <GeneratedHandlerDialog
+          code={generatedHandlerCode}
+          onClose={() => setGeneratedHandlerCode(null)}
+        />
       )}
     </>
   )
