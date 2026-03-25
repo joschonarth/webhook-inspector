@@ -15,7 +15,7 @@ export function GenerateHandlerButton({
     <button
       type="button"
       disabled={disabled || isGenerating}
-      className="bg-indigo-400 text-white w-full rounded-lg flex items-center justify-center gap-3 font-medium text-sm py-2 disabled:opacity-50"
+      className="bg-indigo-400 text-white w-full rounded-lg flex items-center justify-center gap-3 font-medium text-sm py-2 disabled:opacity-50 cursor-pointer"
       onClick={onClick}
     >
       {isGenerating ? (
