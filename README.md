@@ -1,21 +1,25 @@
 <div align="center">
 
-# webhook.inspect
+# 🪝 webhook.inspect
 
 *Capture, inspect and generate handlers for your webhooks in real time.*
 
-<img src="https://img.shields.io/github/last-commit/joschonarth/webhook-inspector?style=default&logo=git&logoColor=white&color=a1a1aa&labelColor=27272a" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/joschonarth/webhook-inspector?style=default&color=a1a1aa&labelColor=27272a" alt="repo-top-language">
-<img src="https://img.shields.io/github/languages/count/joschonarth/webhook-inspector?style=default&color=a1a1aa&labelColor=27272a" alt="repo-language-count">
+<img src="https://img.shields.io/github/last-commit/joschonarth/webhook-inspector?style=default&logo=git&logoColor=white&color=818cf8&labelColor=27272a" alt="last-commit">
+<img src="https://img.shields.io/github/languages/top/joschonarth/webhook-inspector?style=default&color=818cf8&labelColor=27272a" alt="repo-top-language">
+<img src="https://img.shields.io/github/languages/count/joschonarth/webhook-inspector?style=default&color=818cf8&labelColor=27272a" alt="repo-language-count">
 
 ---
 
 📃 [About](#-about)&nbsp;&nbsp;•&nbsp;&nbsp;
-🛠️ [Tech Stack](#-tech-stack)&nbsp;&nbsp;•&nbsp;&nbsp;
+🛠️ [Tech Stack](#️-tech-stack)&nbsp;&nbsp;•&nbsp;&nbsp;
 ✨ [Features](#-features)&nbsp;&nbsp;•&nbsp;&nbsp;
 🚀 [Getting Started](#-getting-started)
 
 </div>
+
+---
+
+<img width="2880" height="1618" alt="webhook-inspect" src="https://github.com/user-attachments/assets/42f45682-e153-4f5c-99da-511db0155abc" />
 
 ---
 
