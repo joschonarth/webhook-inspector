@@ -15,7 +15,7 @@ function Layout() {
 
   return (
     <div className="h-screen bg-zinc-900">
-      {!isGenerating && <GeneratingHandlerOverlay />}
+      {isGenerating && <GeneratingHandlerOverlay />}
 
       <Group orientation="horizontal">
         <Panel defaultSize="20%" minSize="15%" maxSize="40%">
