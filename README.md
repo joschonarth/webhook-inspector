@@ -7,6 +7,9 @@
 <img src="https://img.shields.io/github/last-commit/joschonarth/webhook-inspector?style=default&logo=git&logoColor=white&color=818cf8&labelColor=27272a" alt="last-commit">
 <img src="https://img.shields.io/github/languages/top/joschonarth/webhook-inspector?style=default&color=818cf8&labelColor=27272a" alt="repo-top-language">
 <img src="https://img.shields.io/github/languages/count/joschonarth/webhook-inspector?style=default&color=818cf8&labelColor=27272a" alt="repo-language-count">
+<a href="./README.pt.md">
+  <img src="https://img.shields.io/badge/lang-pt--BR-27272a?style=default&labelColor=27272a&color=818cf8" alt="pt-br">
+</a>
 
 ---
 
