@@ -117,6 +117,18 @@ Copy the example env file and fill in your values inside the `api/` folder:
 cp .env.example .env
 ```
 
+### 🤖 Google Gemini API Key
+
+To use the AI handler generation feature, you'll need a free API key from Google AI Studio.
+
+1. Go to **[aistudio.google.com/apikey](https://aistudio.google.com/apikey)**
+2. Sign in with your Google account
+3. Click **Create API key**
+4. Copy the key and add it to your `.env` file:
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=your_api_key_here
+```
+
 ### 🐳 Database
 
 Start the PostgreSQL container from the `api/` folder:
